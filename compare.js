@@ -138,7 +138,7 @@ function processIncomeAndInvoices(incomeSet, invoiceSet) {
     invoiceSet.forEach(invoice => {
          if(invoice.cleanup_status != "closed")
          {
-            invoice.剩余金额 =  parseFloat(invoice.已报销金额 + invoice.剩余金额).toFixed();
+            invoice.剩余金额 =  parseFloat(invoice.已报销金额 + invoice.剩余金额).toFixed(2);
             invoice.已报销金额 = 0;
             invoice.cleanup_status = 'open';
             console.log(`发票 ${invoice.invoice_number} 部分使用，状态保持 open`);
